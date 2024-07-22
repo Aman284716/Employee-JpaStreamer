@@ -1,0 +1,11 @@
+DependenciesADD DEPENDENCIES...CTRL + B
+Spring Web WEB
+Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+Spring Data MongoDB NOSQL
+Store data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time.
+Lombok DEVELOPER TOOLS
+Java annotation library which helps to reduce boilerplate code.
+Spring Boot DevTools DEVELOPER TOOLS
+Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
+Spring Boot Actuator OPS
+Supports built in (or custom) endpoints that let you monitor and manage your application - such as application health, metrics, sessions, etc.
