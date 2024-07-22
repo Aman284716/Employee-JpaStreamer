@@ -32,4 +32,38 @@ public class EmployeeController {
     public List<Employee> groupbyEmployeeByPaymentTier(){
         return employeeService.findAllEmp();
     }
+
+    //Age Range
+    @GetMapping("/AgeRange/{minAge}/{maxAge}")
+    public List<Employee> AgeRange(@PathVariable int minAge, @PathVariable int maxAge){
+        return employeeService.getByAgeRange(minAge, maxAge);
+    }
+    //Count of Gender
+    @GetMapping("CountOfGender")
+    public Map<String, Long> CountOfGender(){
+        return employeeService.CountOfGender();
+    }
+
+    //List of Employees on Particular Year
+    @GetMapping("EmployeeByYear/{year}")
+    public List<Employee> EmployeeByYear(@PathVariable int year){
+        return employeeService.EmployeeByYear(year);
+    }
+
+    //particular Year Count M/F
+    @GetMapping("CountMF/{year}")
+    public Map<String, Long> CountMFByYear(@PathVariable int year){
+        return employeeService.CountMFByYear(year);
+    }
+    //GroupByEducation
+    @GetMapping("ByEducation")
+    public Map<String, List<Employee>> ByEducation(){
+        return employeeService.ByEducation();
+    }
+
+    //Filter() ON Year M/F Experience And Education
+    @GetMapping("{year}/{MorF}/{Exp}/{Edu}")
+    public List<Employee> FilterEmployee(@PathVariable int year, @PathVariable String MorF, @PathVariable int Exp, @PathVariable String Edu){
+        return employeeService.FilterEmployees(year, MorF, Exp, Edu);
+    }
 }

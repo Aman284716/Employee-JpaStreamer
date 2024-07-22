@@ -33,4 +33,47 @@ public class EmployeeService {
     public List<Employee> findAllEmp() {
         return employeeRepo.findAll();
     }
+
+    public List<Employee> getByAgeRange(int minAge, int maxAge) {
+        return jpaStreamer.stream(Employee.class)
+               .filter(employee -> employee.getAge() >= minAge && employee.getAge() <= maxAge)
+               .collect(Collectors.toList());
+    }
+
+    public Map<String, Long> CountOfGender() {
+        return jpaStreamer.stream(Employee.class)
+                .collect(Collectors.groupingBy(
+                        Employee::getGender,
+                        Collectors.counting()
+                ));
+    }
+
+    public List<Employee> EmployeeByYear(int year) {
+        return jpaStreamer.stream(Employee.class)
+                .filter(employee -> employee.getJoiningYear() == year)
+                .collect(Collectors.toList());
+    }
+
+    public Map<String, Long> CountMFByYear(int year) {
+        return jpaStreamer.stream(Employee.class)
+               .filter(employee -> employee.getJoiningYear() == year)
+               .collect(Collectors.groupingBy(
+                        Employee::getGender,
+                        Collectors.counting()
+                ));
+    }
+
+
+    public Map<String, List<Employee>> ByEducation() {
+        return jpaStreamer.stream(Employee.class)
+                .collect(Collectors.groupingBy(Employee::getEducation));
+    }
+
+    public List<Employee> FilterEmployees(int year, String mF, int exp, String edu) {
+        return jpaStreamer.stream(Employee.class)
+                .filter(Employee -> Employee.getGender().equalsIgnoreCase(mF) &&
+                        Employee.getJoiningYear()== year &&
+                        Employee.getExperienceInCurrentDomain()==exp &&
+                        Employee.getEducation().equals(edu)).collect(Collectors.toList());
+    }
 }
