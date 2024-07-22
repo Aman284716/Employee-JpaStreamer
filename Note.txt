@@ -1,11 +1,15 @@
-DependenciesADD DEPENDENCIES...CTRL + B
-Spring Web WEB
-Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
-Spring Data MongoDB NOSQL
-Store data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time.
-Lombok DEVELOPER TOOLS
-Java annotation library which helps to reduce boilerplate code.
-Spring Boot DevTools DEVELOPER TOOLS
-Provides fast application restarts, LiveReload, and configurations for enhanced development experience.
-Spring Boot Actuator OPS
-Supports built in (or custom) endpoints that let you monitor and manage your application - such as application health, metrics, sessions, etc.
+Quick Notes on Dependencies
+Spring Web: Framework for creating web applications and REST APIs.
+Spring Data MongoDB: Integrates MongoDB for NoSQL database functionality.
+Lombok: Reduces repetitive code with annotations for common methods.
+Spring Boot DevTools: Enhances development experience with features like live reload.
+Spring Boot Actuator: Adds management and monitoring capabilities to your application.
+JPAStreamer: Facilitates complex querying for JPA entities.
+Build Helper Maven Plugin: Configures Maven to recognize additional source directories.
+Swagger 
+<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+integrated Spring AutoCOnfiguration https://mvnrepository.com/artifact/com.speedment.jpastreamer.integration.spring/spring-boot-jpastreamer-autoconfigure/3.0.4
